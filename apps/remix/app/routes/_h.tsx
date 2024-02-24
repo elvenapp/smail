@@ -1,13 +1,19 @@
-import { Outlet } from "@remix-run/react";
+import {Outlet} from "@remix-run/react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 export default function HomeLayout() {
-  return (
-    <div className="mx-auto max-w-2xl gap-2 h-dvh p-2 flex flex-col">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
-  );
+    return (
+        <main className="flex flex-col min-h-screen">
+            <section className="pb-6 bg-white">
+                <Header/>
+            </section>
+            <section className="flex flex-1 ">
+                <Outlet/>
+            </section>
+            <section className="text-gray-700 bg-white md:pt-6">
+                <Footer/>
+            </section>
+        </main>
+    );
 }

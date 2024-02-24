@@ -46,6 +46,7 @@ export async function getEmailsByMessageTo(
       .orderBy(desc(emails.createdAt))
       .execute();
   } catch (e) {
+    // console.error(e)
     return [];
   }
 }

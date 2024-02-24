@@ -9,6 +9,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       request.headers.get("Cookie"),
     )) as string) || undefined;
   if (!userMailbox) {
+    console.log("no mailbox")
     return [];
   }
   const db = getWebTursoDB(

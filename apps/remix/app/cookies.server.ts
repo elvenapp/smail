@@ -1,4 +1,5 @@
-import { createCookie } from "@remix-run/node";
+import {createCookie, createCookieSessionStorage} from "@remix-run/node";
+import {createSession} from "@remix-run/cloudflare";
 
 const secrets = (process.env.COOKIES_SECRET as string)
   .split(",")
@@ -7,7 +8,8 @@ const secrets = (process.env.COOKIES_SECRET as string)
 console.log("secrets", secrets);
 
 export const userMailboxCookie = createCookie("userMailbox", {
-  maxAge: 60 * 60 * 24 * 1,
+  expires:new Date(Date.now()+1000*60*60),
   secrets: secrets,
   httpOnly: true,
 });
+

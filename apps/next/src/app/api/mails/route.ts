@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 
 export async function getMailbox() {
   const cookie = cookies().get("mailbox");
+
   if (!cookie) {
     return undefined;
   }
@@ -15,7 +16,9 @@ export async function getMailbox() {
   }
   return mailbox;
 }
-
+export async function deleteMailbox(){
+  cookies().delete('mailbox')
+}
 export async function fetchEmails(mailbox: string | undefined) {
   try {
     if (!mailbox) {

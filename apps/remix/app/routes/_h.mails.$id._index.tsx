@@ -24,7 +24,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 export default function MailViewer() {
   const mail = useLoaderData<typeof loader>();
   return (
-    <div className="flex flex-1 flex-col p-2 gap-10">
+    <div className="flex flex-1 flex-col p-2 gap-10 container mx-auto">
       <Link
         to="/"
         className="flex w-fit font-semibold items-center border p-2 rounded-md gap-2"

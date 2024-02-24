@@ -13,6 +13,7 @@ const turnstileSecret = process.env.TURNSTILE_SECRET || "";
 
 export async function fetchMailbox(data: FormData) {
   try {
+
     const token = data.get("cf-turnstile-response");
     if (!token || typeof token !== "string") {
       return;
@@ -38,7 +39,7 @@ export async function fetchMailbox(data: FormData) {
     }
 
     const name = randomName("", ".");
-    const domain = "smail.pw";
+    const domain = "dark123.com";
     const mailbox = `${name}@${domain}`;
 
     const secret = process.env.COOKIES_SECRET as string;
